@@ -1,0 +1,47 @@
+$active-color: #007bff;
+$button-margin: 5px;
+
+.phone-widget {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 300px;
+  margin: 20px auto;
+  text-align: center;
+
+  .status-buttons {
+    button {
+      margin: $button-margin;
+      &.active {
+        font-weight: bold;
+        color: $active-color;
+      }
+    }
+  }
+
+  .dial-pad {
+    margin-top: 20px;
+
+    .country-code {
+      margin-bottom: 10px;
+    }
+
+    .number-display {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .number-buttons {
+      button {
+        margin: 3px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  .offline-message {
+    p {
+      font-style: italic;
+    }
+  }
+}

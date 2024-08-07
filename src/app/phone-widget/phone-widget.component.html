@@ -1,0 +1,26 @@
+<form [formGroup]="phoneForm">
+  <ngx-mat-intl-tel-input-v17 formControlName="phone"></ngx-mat-intl-tel-input-v17>
+</form>
+
+<div>
+  <button (click)="setStatus('online')">Online</button>
+  <button (click)="setStatus('offline')">Offline</button>
+  <button (click)="setStatus('away')">Away</button>
+  <button (click)="setStatus('transfer')">Transfer</button>
+</div>
+
+<div *ngIf="status === 'online' || status === 'transfer'">
+  <div>
+    <button *ngFor="let num of [1,2,3,4,5,6,7,8,9,0]" (click)="dialNumber(num.toString())">{{ num }}</button>
+  </div>
+  <button (click)="call()">Call</button>
+  <button (click)="clearDialedNumber()">Clear</button>
+</div>
+
+<div *ngIf="status === 'away'">
+  <p>User is away</p>
+</div>
+
+<div *ngIf="status === 'offline'">
+  <p>User is offline</p>
+</div>
